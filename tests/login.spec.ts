@@ -16,6 +16,10 @@ test('invalid login',async ({page})=>{
     .toBeVisible();
 })
 
+test('trace demo', async ({ page }) => {
+  await page.goto('https://aqualogica.in/');
 
+  await expect(page).toHaveTitle('Wrong Title');
+});
 
 
