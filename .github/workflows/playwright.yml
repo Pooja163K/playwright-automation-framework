@@ -2,8 +2,8 @@ name: Playwright Tests
 
 on:
   push: 
-  pull request:
-  workflow dispatch:
+  pull_request:
+  workflow_dispatch:
   schedule: 
      - cron: '30 3 * * *'
 
@@ -12,21 +12,21 @@ jobs:
      runs-on: windows-latest
 
      steps: 
-       -name: Checkout code 
+       - name: Checkout code 
        uses: actions/checkout@v4
        
 
-      -name: Setup Node.js
+      - name: Setup Node.js
        uses: actions/setup-node@v4
        with:
        node-version: 20
 
-      -name: Install dependencies
+      - name: Install dependencies
        run: npm ci
 
-      -name: Install Playwright browsers
-      run: npx playwright install --with-deps
+      - name: Install Playwright browsers
+      run: npx playwright install 
 
-      -name: Run Playwright tests
+      - name: Run Playwright tests
       run: npx playwright test
        
