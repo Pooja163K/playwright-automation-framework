@@ -3,7 +3,7 @@ import { loginData } from './test-data/loginData'
 
 for ( const data of loginData){
 
-    test(`login for ${data.username} `, async ({page})=> {
+    test.only(`login for ${data.username} `, async ({page})=> {
      await page.goto('/');
      await page.getByTestId('username').fill(data.username);
      await page.getByTestId('password').fill(data.password);

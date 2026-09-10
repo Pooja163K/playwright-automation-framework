@@ -5,7 +5,7 @@ export const loginData = [
         expectedResult: 'success'
     },
     {
-        username: 'problem_user',
+        username: 'locked_out_user',
         password: 'secret_sauce',
          expectedResult: 'locked'
     }
