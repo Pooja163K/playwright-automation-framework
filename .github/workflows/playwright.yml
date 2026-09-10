@@ -5,9 +5,9 @@ on:
   pull request:
   workflow dispatch:
   schedule: 
-     -cron: '30 3 * * *'
+     - cron: '30 3 * * *'
 
- jobs:
+jobs:
    test:     
      runs-on: windows-latest
 
