@@ -56,7 +56,7 @@ test('Add Single Product', async ({ loggedInPage }) => {
     const cartAfterAdding = await cartPage.cartValue()
     expect(cartAfterAdding).toBe('1');
     await cartPage.openCart();
-    await expect(loggedInPage.getByText('Sauce Labs Backpack')).toBeVisible();
+    await expect(loggedInPage.getByText('Sauce Labs Backpackkkkkkkkkkk')).toBeVisible();
 })
 
 test('Add multiple products', async ({ loggedInPage }) => {
