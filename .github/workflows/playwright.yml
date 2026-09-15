@@ -12,6 +12,7 @@ jobs:
     runs-on: windows-latest
     env: 
        BASE_URL: https://www.saucedemo.com
+       TEST_PASSWORD: ${{secrets.TEST_PASSWORD}}
 
     steps:
       - name: Checkout code
