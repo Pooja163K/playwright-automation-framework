@@ -1,12 +1,12 @@
 export const loginData = [
     {
         username: 'standard_user',
-        password: 'secret_sauce',
+        password: process.env.TEST_PASSWORD!,
         expectedResult: 'success'
     },
     {
-        username: 'problem_user',
-        password: 'secret_sauce',
+        username: 'locked_out_user',
+        password: process.env.TEST_PASSWORD!,
          expectedResult: 'locked'
     }
 ];
