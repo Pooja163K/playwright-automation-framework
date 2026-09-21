@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config();  
 
 /**
  * Read environment variables from file.
@@ -14,6 +14,14 @@ dotenv.config();
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+const environments = {
+  QA: 'https://www.saucedemo.com',
+  STAGE: 'https://www.saucedemo.com',
+};
+
+const environment = process.env.ENVIRONMENT || 'QA';
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -29,7 +37,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-     baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
+     baseURL: environments[environment as keyof typeof environments],
      headless: false,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */

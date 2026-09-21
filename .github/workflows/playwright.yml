@@ -4,6 +4,15 @@ name: Playwright Tests
   push:
   pull_request:
   workflow_dispatch:
+      inputs:
+      environment:
+      description: 'Environment to run tests against'
+      required: true
+      default: 'QA'
+      type: choice
+      options:
+        - QA
+        - STAGE
   schedule:
     - cron: "30 3 * * *"
 
@@ -13,6 +22,7 @@ jobs:
     env: 
        BASE_URL: https://www.saucedemo.com
        TEST_PASSWORD: ${{secrets.TEST_PASSWORD}}
+       ENVIRONMENT: ${{ inputs.environment || 'QA' }}
 
     steps:
       - name: Checkout code
