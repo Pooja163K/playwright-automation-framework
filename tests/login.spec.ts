@@ -10,7 +10,7 @@ test('valid login', async ({ loggedInPage }) => {
   await expect(loggedInPage).toHaveURL(/inventory/);
 })
 
-test('invalid login', async ({ page }) => {
+test('invalid  login', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.login('standard_user', 'not_so_secret_sauce');
   await expect(loginPage.error)
